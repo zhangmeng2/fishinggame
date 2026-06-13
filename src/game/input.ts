@@ -46,6 +46,10 @@ export function setupInput(
   };
 }
 
+export function consumeClick(input: InputState): void {
+  input.mouseClicked = false;
+}
+
 export function getMovement(input: InputState): Vector2 {
   let dx = 0;
   let dy = 0;

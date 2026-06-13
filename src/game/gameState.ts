@@ -1,5 +1,6 @@
 import type { GameState, InputState } from './types';
 import { FISH_TYPES } from './constants';
+import { consumeClick } from './input';
 import { createPlayer, updatePlayer } from '../entities/Player';
 import { createRod, updateRod } from '../entities/Rod';
 import { updateFish } from '../entities/Fish';
@@ -57,5 +58,5 @@ export function updateGameState(
     }
   }
 
-  input.mouseClicked = false;
+  consumeClick(input);
 }

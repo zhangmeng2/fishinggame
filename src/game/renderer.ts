@@ -108,13 +108,18 @@ function drawPlayer(ctx: CanvasRenderingContext2D, state: GameState): void {
   ctx.fill();
   ctx.stroke();
 
-  // Rod in hand
+  // Rod in hand — convert world-space aim direction to screen space
   const rodAngle = state.rod.angle;
+  const worldAimX = state.player.position.x + Math.cos(rodAngle);
+  const worldAimY = state.player.position.y + Math.sin(rodAngle);
+  const screenPlayer = toScreen(state.player.position.x, state.player.position.y);
+  const screenAim = toScreen(worldAimX, worldAimY);
+  const screenRodAngle = Math.atan2(screenAim.y - screenPlayer.y, screenAim.x - screenPlayer.x);
   const rodLen = 20;
-  const rodStartX = sx + Math.cos(rodAngle) * 5;
-  const rodStartY = sy - 18 + Math.sin(rodAngle) * 5;
-  const rodEndX = rodStartX + Math.cos(rodAngle) * rodLen;
-  const rodEndY = rodStartY + Math.sin(rodAngle) * rodLen;
+  const rodStartX = sx + Math.cos(screenRodAngle) * 5;
+  const rodStartY = sy - 18 + Math.sin(screenRodAngle) * 5;
+  const rodEndX = rodStartX + Math.cos(screenRodAngle) * rodLen;
+  const rodEndY = rodStartY + Math.sin(screenRodAngle) * rodLen;
 
   ctx.strokeStyle = ROD_COLOR;
   ctx.lineWidth = 3;
