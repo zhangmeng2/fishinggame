@@ -1,4 +1,4 @@
-import { PlayerState, InputState } from '../game/types';
+import type { PlayerState, InputState } from '../game/types';
 import { getMovement } from '../game/input';
 import {
   PLAYER_SPEED,

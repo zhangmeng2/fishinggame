@@ -1,4 +1,4 @@
-import { InputState, Vector2 } from './types';
+import type { InputState, Vector2 } from './types';
 import { toWorld } from './iso';
 
 export function createInputState(): InputState {

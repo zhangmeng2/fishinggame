@@ -1,4 +1,5 @@
-import { RodState, GamePhase, InputState, FishInstance } from '../game/types';
+import type { RodState, InputState, FishInstance } from '../game/types';
+import { GamePhase } from '../game/types';
 import { CAST_SPEED, HOOK_RADIUS } from '../game/constants';
 
 export function createRod(): RodState {

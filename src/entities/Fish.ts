@@ -1,4 +1,4 @@
-import { FishInstance, FishType } from '../game/types';
+import type { FishInstance, FishType } from '../game/types';
 import {
   FISH_SPAWN_Y_MIN,
   FISH_SPAWN_Y_MAX,

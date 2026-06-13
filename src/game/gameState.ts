@@ -1,5 +1,5 @@
-import { GameState, InputState } from './types';
-import { FISH_TYPES, FISH_SPAWN_INTERVAL } from './constants';
+import type { GameState, InputState } from './types';
+import { FISH_TYPES } from './constants';
 import { createPlayer, updatePlayer } from '../entities/Player';
 import { createRod, updateRod } from '../entities/Rod';
 import { updateFish } from '../entities/Fish';

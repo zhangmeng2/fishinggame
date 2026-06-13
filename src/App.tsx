@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import Game from './game/Game';
 import HUD from './components/HUD';
-import { GameState } from './game/types';
+import type { GameState } from './game/types';
 
 export default function App() {
   const [gameState, setGameState] = useState<GameState | null>(null);

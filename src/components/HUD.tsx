@@ -1,4 +1,5 @@
-import { GameState, GamePhase } from '../game/types';
+import type { GameState } from '../game/types';
+import { GamePhase } from '../game/types';
 
 interface HUDProps {
   state: GameState | null;

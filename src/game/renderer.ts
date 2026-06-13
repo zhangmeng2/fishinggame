@@ -1,4 +1,4 @@
-import { GameState } from './types';
+import type { GameState } from './types';
 import { toScreen } from './iso';
 import {
   TILE_W,
@@ -7,7 +7,6 @@ import {
   CANVAS_H,
   WORLD_W,
   WORLD_H,
-  WATER_START_Y,
   SHORE_Y,
 } from './constants';
 

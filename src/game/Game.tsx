@@ -3,7 +3,7 @@ import { CANVAS_W, CANVAS_H } from './constants';
 import { createInputState, setupInput } from './input';
 import { createInitialState, updateGameState } from './gameState';
 import { render } from './renderer';
-import { GameState, InputState } from './types';
+import type { GameState, InputState } from './types';
 
 interface GameProps {
   onStateChange: (state: GameState) => void;

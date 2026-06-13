@@ -1,4 +1,4 @@
-import { Vector2 } from './types';
+import type { Vector2 } from './types';
 import { TILE_W, TILE_H, CANVAS_W } from './constants';
 
 export function toScreen(wx: number, wy: number): Vector2 {
