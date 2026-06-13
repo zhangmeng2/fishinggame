@@ -191,6 +191,21 @@ function drawBobber(ctx: CanvasRenderingContext2D, state: GameState): void {
   ctx.arc(x, y + 1, 5, 0, Math.PI * 2);
   ctx.fill();
 
+  // Splash effect when bobber lands
+  if (state.rod.splashTimer > 0) {
+    const t = state.rod.splashTimer / 0.6; // 0..1
+    for (let i = 0; i < 3; i++) {
+      const radius = (8 + i * 10) * (1 - t) + (20 + i * 15) * t;
+      const alpha = t * 0.5;
+      ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+      ctx.lineWidth = 1.5 - i * 0.4;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.lineWidth = 1;
+  }
+
   // Hook indicator when fish is near
   if (state.rod.hookedFishId !== null) {
     ctx.strokeStyle = 'rgba(255, 235, 59, 0.8)';

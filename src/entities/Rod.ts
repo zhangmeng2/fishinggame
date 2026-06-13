@@ -10,6 +10,7 @@ export function createRod(): RodState {
     castTarget: null,
     castProgress: 0,
     hookedFishId: null,
+    splashTimer: 0,
   };
 }
 
@@ -20,6 +21,7 @@ export function updateRod(
   fish: FishInstance[],
   dt: number
 ): { caughtFishId: number | null } {
+  rod.splashTimer = Math.max(0, rod.splashTimer - dt);
   switch (rod.phase) {
     case GamePhase.IDLE: {
       rod.angle = Math.atan2(
@@ -57,6 +59,7 @@ export function updateRod(
       if (dist < step) {
         rod.bobberPosition = { ...rod.castTarget };
         rod.castProgress = 1;
+        rod.splashTimer = 0.6;
         rod.phase = GamePhase.WAITING;
       } else {
         rod.bobberPosition.x += (dx / dist) * step;

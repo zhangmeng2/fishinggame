@@ -40,6 +40,7 @@ export interface RodState {
   castTarget: Vector2 | null;
   castProgress: number;
   hookedFishId: number | null;
+  splashTimer: number;
 }
 
 export interface GameState {

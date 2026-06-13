@@ -15,7 +15,12 @@
       "Bash(npx tsc *)",
       "Bash(git commit *)",
       "Bash(git -C /Users/zhangmengdemac/Documents/code/fishinggame add src/App.tsx src/main.tsx src/index.css)",
-      "Bash(git -C /Users/zhangmengdemac/Documents/code/fishinggame commit -m ' *)"
+      "Bash(git -C /Users/zhangmengdemac/Documents/code/fishinggame commit -m ' *)",
+      "Bash(git *)",
+      "Skill(superpowers:finishing-a-development-branch)",
+      "Bash(ssh-keygen -R github.com)",
+      "Bash(ssh-keyscan -t ed25519 github.com)",
+      "Bash(gh auth *)"
     ]
   }
 }
